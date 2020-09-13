@@ -1,0 +1,36 @@
+<%- include("../partials/header") %>
+
+
+<div class="container">
+	<header class="jumbotron">
+		<div class="container"> 
+			<h1>The beautiful Places on earth</h1>
+				<p> Happy Traveling!</p>
+				<a class="btn btn-primary btn-lg"href="/dreamplaces/addnew">Add New</a>
+		</div>
+  	</header>
+	<h3>Our most popular sites</h3>
+	<div class="row text-center" style="display:flex; flex-wrap:wrap;">
+			
+				<% dreamplaces.forEach(function(places){%>
+				<div class="col-md-3 col-sm-6">
+					<div class="thumbnail">
+						<img src="<%=places.image%>" >
+							<div class="caption">
+								
+								<h4><%= places.name%></h4>
+						</div>
+						<p>
+							<a href="/dreamplaces/<%=places._id%>" class="btn btn-primary">More Info</a>
+						</p>
+					</div>
+						
+						
+				</div>	
+
+			<%});%>	
+		</div>
+	<a href="/">Go Back</a>
+	</div>
+
+<%- include("../partials/footer") %>
